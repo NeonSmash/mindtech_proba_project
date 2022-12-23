@@ -15,12 +15,17 @@
 
 
 $router->get('/movies', 'MoviesController@index');
+$router->get('/movies/toprated', 'MoviesController@toprated');
 $router->get('/movies/{id}', 'MoviesController@show');
 $router->post('/movies/create', 'MoviesController@store');
+
+
 $router->put('/movies/update/{id}', 'MoviesController@update');
-$router->delete('/movies/delete{id}', 'MoviesController@destroy');
+$router->delete('/movies/delete/{id}', 'MoviesController@destroy');
+
 
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    //return $router->app->version();
+    echo "Helló világ!";
 });
